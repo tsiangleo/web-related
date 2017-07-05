@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="webchance3"
+  id="myeclipse.1435555989403"
+  context-root="/webchance3"
+  j2ee-spec="6.0"
+  archive="webchance3.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

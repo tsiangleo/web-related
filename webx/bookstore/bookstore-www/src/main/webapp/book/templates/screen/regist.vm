@@ -1,0 +1,33 @@
+$page.setTitle("Regist")
+
+<form action="$app1Link.setTarget("regist")" method="post">
+    $csrfToken.hiddenField
+    <input type="hidden" name="action" value="regist_action"/>
+
+    #set ($group = $form.regist.defaultInstance)
+
+    <p>
+    登录名：<input type="text" name="$group.loginName.key" value="$!group.loginName.value"/>
+    #if (!$group.loginName.valid)
+        <p>$group.loginName.message</p>
+    #end
+    </p>
+
+    <p>
+    密码：<input type="password" name="$group.password.key" value="$!group.password.value"/>
+    #if (!$group.password.valid)
+        <p>$group.password.message</p>
+    #end
+    </p>
+
+    <p>
+    确认密码：<input type="password" name="$group.password2.key" value="$!group.password2.value"/>
+    #if (!$group.password2.valid)
+        <p>$group.password2.message</p>
+    #end
+    </p>
+
+    <p>
+        <input type="submit" name="event_submit_do_regist"/>
+    </p>
+</form>

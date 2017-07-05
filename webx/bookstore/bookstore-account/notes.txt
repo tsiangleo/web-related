@@ -1,0 +1,41 @@
+## 先后遇到的问题
+
+### ThreadLocal问题
+loginCheckFilter和doLogin这两处的逻辑是互相配合的。
+LoginCheckFilter的逻辑：检测是否能从session域中获取登录态信息，获取不到则跳转到登录页。获得到登录态信息则放到当前线程上下文中供本次请求的后续组件读取。（一次请求的所有组件在同一个线程中执行，所以放在线程中。）
+doLogin的逻辑：对用户核身，将用户的登陆态信息放到session域中。
+
+LoginCheckFilter的物理组件可以有多个，比如之前的cplogin是用两个valve来完成的，一个valve获取登录态信息放在线程上下文中，另一个valve用于检查是否登陆然后跳转到登录页。
+
+### Redirect的问题
+问题描述：用户跳转到登录页，浏览器地址为：
+http://account.bookstore.com:8081/login.htm?redirectURL=http%3A%2F%2Fwww.bookstore.com%3A8081%2Findex.htm
+输入用户名和密码后得request.getQueryString()为空，这样登陆成功后无法重定向。
+原因：form表单的action不含redirectURL参数。
+临时解决方案：添加一个Login Screen类，Login Screen类得到的redirectURL是URLEncoder后的连接，需要先Decode，，再将redirectURL参数传递到login.vm页面。
+
+
+### session跨域共享的问题
+预备知识：Cookie的知识，Cookie的domain和path。
+解决方案：只需要在<cookie>中配置domain。
+<cookie domain="bookstore.com" path="/" maxAge="0" httpOnly="true" />
+
+
+
+### 发现没有实现跨JVM session共享
+
+开始以为session id和session中的其他数据是分开存储的，要分别配置cookie参数，所以加上了domain等参数，才能实现跨域共享。
+                <session-stores:cookie-store id="temporaryCookie">
+                    <cookie name="tmp"  />
+                </session-stores:cookie-store>
+
+                <session-stores:cookie-store id="temporaryCookie">
+                    <cookie name="tmp" domain="bookstore.com" path="/" maxAge="0" httpOnly="true" />
+                </session-stores:cookie-store>
+
+然并卵。
+
+最后发现LoginCheckValve的逻辑有问题，必须要先将session中的信息设置到线程上下文，然后再进行后续的操作。
+于是修改了LoginCheckValve，将以前的isLogin方法中提取session信息到线程上下文的逻辑提取到settingLoginContext()方法中，并且在进入invoke方法就调用settingLoginContext()方法。
+
+

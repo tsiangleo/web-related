@@ -1,0 +1,34 @@
+$page.setTitle("Login")
+
+###set($url = "$app1Link.setTarget('login').addQueryData('redirectURL',$redirectURL)")
+#set($url = "login.htm?redirectURL=$redirectURL")
+
+<a href="$url">$url</a>
+
+$!loginError
+
+<form action="$url" method="post">
+    $csrfToken.hiddenField
+    <input type="hidden" name="action" value="login_action"/>
+
+    #set ($group = $form.login.defaultInstance)
+
+<p>
+    登录名：<input type="text" name="$group.loginName.key" value="$!group.loginName.value"/>
+    #if (!$group.loginName.valid)
+        <p>$group.loginName.message</p>
+    #end
+    </p>
+
+<p>
+    密码：<input type="password" name="$group.password.key" value="$!group.password.value"/>
+    #if (!$group.password.valid)
+        <p>$group.password.message</p>
+    #end
+    </p>
+
+
+    <p>
+        <input type="submit" name="event_submit_do_login"/>
+    </p>
+</form>

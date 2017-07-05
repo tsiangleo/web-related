@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.github.tsiangleo.account -DartifactId=account-client -Dversion=1.0-SNAPSHOT -Dpackage=com.github.tsiangleo.account -DarchetypeArtifactId=archetype-webx-quickstart -DarchetypeGroupId=com.alibaba.citrus.sample -DarchetypeVersion=1.8 -DinteractiveMode=false

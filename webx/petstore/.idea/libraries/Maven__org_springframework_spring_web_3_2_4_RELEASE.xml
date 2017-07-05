@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework:spring-web:3.2.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RElEASE/spring-web-3.2.4.RElEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

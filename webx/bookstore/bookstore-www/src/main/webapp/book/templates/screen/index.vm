@@ -1,0 +1,80 @@
+$page.setTitle("welcome to bookstore!")
+
+<h1>welcome to bookstore!</h1>
+
+<hr>
+
+
+<a href="$accountRegistLink">注册</a> |
+
+#if($isLogin)
+    hello,$loginName!
+#else
+<a href="$accountLoginLink?redirectURL=http://www.bookstore.com:8082/index.htm">登陆</a>
+#end
+
+| <a href="#">用户信息</a> | <a href="#">我的购物车</a> | <a href="#">库存管理</a>
+
+<hr>
+
+<br>
+
+<p>
+<table border="1px">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>封面</td>
+            <td>书名</td>
+            <td>作者</td>
+            <td>出版社</td>
+            <td>出版日期</td>
+            <td>页数</td>
+            <td>定价</td>
+            <td>ISBN</td>
+            <td>库存量</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        #foreach( $book in $bookList )
+            <tr>
+                <td>
+                    $book.id
+                </td>
+                <td>
+                    <img src="$book.picURL" style="width: 107px">
+                </td>
+                <td>
+                    $book.name
+                </td>
+                <td>
+                    $book.author
+                </td>
+                <td>
+                    $book.press
+                </td>
+                <td>
+                    $book.publicationDate
+                </td>
+                <td>
+                    $book.pages
+                </td>
+                <td>
+                    $book.price
+                </td>
+                <td>
+                    $book.isbn
+                </td>
+                <td>
+                    $book.inventory
+                </td>
+                <td>
+                    <a href="#?bkid=$book.id">加入购物车</a>
+                </td>
+            </tr>
+        #end
+    </tbody>
+</table>
+
+</p>

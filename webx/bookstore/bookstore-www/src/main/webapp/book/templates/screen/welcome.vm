@@ -1,0 +1,27 @@
+$page.setTitle("UserCenter-Welcome, $name")
+<h1>Welcome, $name!</h1>
+
+
+<ol>
+    <li>
+        <h2>site index</h2>
+
+        #set($url = "$app1Link.setTarget('index')")
+        <a href="$url">$url</a>
+    </li>
+
+    <li>
+        <h2>User Regist</h2>
+
+        #set($url = "$app1Link.setTarget('regist')")
+        <a href="$url">$url</a>
+    </li>
+
+    <li>
+        <h2>User Logout</h2>
+
+        #set($url = "$app1Link.setTarget('login').addQueryData('action','loginAction').addQueryData('eventSubmitDoLogout','yes')")
+        <a href="$url">$url</a>
+    </li>
+
+</ol>

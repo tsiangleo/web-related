@@ -1,0 +1,21 @@
+$page.setTitle("homepage of Account")
+
+<h1>homepage of bookstore account</h1>
+
+<ol>
+    <li>
+        <h2>User Login</h2>
+
+        #set($url = "$app1Link.setTarget('login')")
+        <a href="$url">$url</a>
+    </li>
+
+    <li>
+        <h2>User Regist</h2>
+
+        #set($url = "$app1Link.setTarget('regist')")
+        <a href="$url">$url</a>
+    </li>
+
+
+</ol>

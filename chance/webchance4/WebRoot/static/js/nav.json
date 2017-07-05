@@ -1,0 +1,55 @@
+[
+	{
+		"id" : 1,
+		"text" : "反馈管理",
+		"iconCls" : "icon-add",
+		"children" : [
+			{
+				"text" : "日志举报",
+				"state" : "closed",
+				"children" : [
+					{
+						"text" : "待处理",
+					  	"url":"http://localhost:8080/webchance4/reportDiary/unchecked/listUI"
+					},
+					{
+						"text" : "已处理",
+					  	"url":"http://localhost:8080/webchance4/reportDiary/checked/get"
+					},
+					{
+						"text" : "获取最新",
+						"url":"http://localhost:8080/webchance4/reportDiary/unchecked/checkLatest"
+					},
+					{
+						"text" : "被举报用户排行",
+						"url":"http://localhost:8080/webchance4/reportDiary/statistics/reporteeTopList"
+					}
+
+				]
+			},
+			{
+				"text" : "用户举报"
+			},
+			{
+				"text" : "帮帮举报"
+			},
+			{
+			  	"text" : "用户反馈"
+			}
+		]
+	},
+	{
+		"id" : 2,
+		"text" : "内容查询",
+		"children" : [
+			{
+				"id" : 7,
+				"text" : "日志管理",
+				"checked" : true
+			},
+			{
+				"text" : "评论管理"
+			}
+		]
+	}
+]
